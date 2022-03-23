@@ -1,0 +1,288 @@
+html {
+  font-size: 16px;
+  background-color: var(--bg-color);
+  color: var(--text-light);
+}
+
+html, body{
+ margin:0;
+ padding:0;
+}
+
+:root,
+:root.light {
+    --bg-color: #fff;
+    --text-color: #123;
+}
+:root.dark {
+    --bg-color: #121212;
+    --bg-overlay: rgba(255,255,255,0.05);
+    --text-light: #fff;
+    --text-dark: #000;
+    --accent1: #150485;
+    --accent2: #590995;
+    --accent3: #C62A88;
+    --accent4: #BB86FC;
+    --player0: 218, 247, 247; 
+    --player1: 247, 247, 218; 
+    --player2: 218, 218, 247; 
+    --player3: 218, 247, 218; 
+    --player4: 247, 218, 247; 
+}
+
+#wrapper {
+  text-align: center;
+  overflow: auto; 
+}
+
+.title {
+  margin-top: 0.8em;
+  padding: 0.8em 0;
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  background-color: var(--bg-overlay);
+  font-size: 48px;
+  word-wrap: normal;
+  color: var(--accent4);
+  position: sticky;
+  position: -webkit-sticky;
+  left: 0px;
+}
+
+.table {
+  display: inline-block;
+  margin-top: 5em;
+  
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 100%;
+  min-width: 65em;
+  overflow-x: auto;
+}
+
+.row {
+  margin: 20px 1%;
+  padding: 0;
+  display: table;
+  width: 97%;
+  table-layout: fixed;
+}
+
+.cell {
+  background-color: var(--bg-overlay);
+  display: table-cell;
+}
+
+.head {
+  line-height: 2em;
+  font-size: 20px;
+}
+
+.input_1 {
+  width: 30%;
+  margin-right:2px;
+  display: inline-block;
+  border-bottom: 1px #6F7372 solid;
+  border-left: 1px #6F7372 solid;
+  float: right;
+}
+
+.input_2 {
+  width: 30%;
+  display: inline-block;
+  border-bottom: 1px #6F7372 solid;
+  border-left: 1px #6F7372 solid;
+  float: right;
+}
+
+.input_total {
+  height: 2.2em;
+  width: 100%;
+  display: inline-block;
+}
+
+.input_10_1 {
+  width: 30%;
+  display: inline-block;
+  border-bottom: 1px #6F7372 solid;
+  border-left: 1px #6F7372 solid;
+  float: right;
+}
+
+.input_10_2 {
+  width: 30%;
+  margin: 0 2px;
+  display: inline-block;
+  border-bottom: 1px #6F7372 solid;
+  border-left: 1px #6F7372 solid;
+  float: right;
+}
+
+.input_10_3 {
+  width: 30%;
+  display: inline-block;
+  border-bottom: 1px #6F7372 solid;
+  border-left: 1px #6F7372 solid;
+  float: right;
+}
+
+.name{
+  height: 1.4em;
+  width: 100%;
+}
+
+.name[contenteditable='true'] {
+  cursor: pointer;
+}
+
+#controls {
+  background-color: transparent;
+}
+.cell.control {
+  width: 3em;
+  height: 3em;
+  border-radius: 1.5em;
+  border: none;
+  float: left;
+  position: relative;
+  top: -2em; 
+  cursor: pointer;
+  font-size: 14px;
+  background: var(--accent4);
+  color: var(--text-dark);
+}
+
+#remove_button {
+  background-image: url('account-minus-outline.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70% 70%;
+  margin: 0;
+}
+
+#remove_button:hover {
+  background-color: #CF6679;
+}
+
+#add_button {
+  background-image: url('account-plus.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70% 70%;
+  margin: 0 0.6em 0 1.3em;
+}
+
+#add_button:hover {
+  background-color: #03DAC6;
+}
+
+.button {
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s; 
+}
+
+#start_game {
+  margin: auto;
+  padding: 1em;
+  border-radius: 0.5em;
+  background: var(--accent4);
+  color: var(--text-dark);
+  width: 8em;
+}
+
+#start_game:hover {
+  background: #03DAC6;
+}
+
+.game_hide {
+  display:none;
+}
+
+.frame {
+  border: inherit;
+}
+
+.totalscore {
+  font-size: 48px;
+  vertical-align: middle;
+}
+
+.input_total {
+  font-size: 48px;
+  vertical-align: middle;
+}
+
+#game_0 {
+  --player-color: var(--player0);
+}
+
+#game_1 {
+  --player-color: var(--player1);
+}
+
+#game_2 {
+  --player-color: var(--player2);
+}
+
+#game_3 {
+  --player-color: var(--player3);
+}
+
+#game_4 {
+  --player-color: var(--player4);
+}
+
+.game {
+  border-spacing: 0;
+}
+
+.game .cell {
+  border: 1px solid rgba(var(--player-color),0.5);
+  border-bottom-width: 2px;
+  border-top-width: 2px;
+}
+
+.game .cell:first-child {
+  border-left-width: 2px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.game .cell:last-child {
+  border-right-width: 2px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.input_frame {
+  height: 1.4em;
+  font-size: 32px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: var(--text-dark);
+  background-color: rgba(var(--color-overylay));
+}
+
+.input_frame[contenteditable='true'] {
+  background-color: rgba(var(--player-color),0.7);
+  cursor: pointer;
+}
+
+.input_frame:focus {
+  background-color: rgba(var(--player-color),1.0);
+}
+
+.playername {
+  vertical-align: middle;
+  font-size: 20px;
+  word-wrap: break-word;
+}
+
+.playername[contenteditable='true'] {
+  color: var(--text-dark);
+  background-color: var(--player-color);
+}
+
+.name:empty:before {
+  content: attr(data-placeholder);
+}
